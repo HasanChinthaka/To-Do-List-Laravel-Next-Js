@@ -51,4 +51,11 @@ class TaskController extends Controller
 
        return redirect()->route('dashboard')->with('success', 'Successfully update task !');
     }
+
+    public function destroy(Request $request){
+        $task = Task::find($request->task_id);
+        $task->delete();
+
+        return redirect()->route('dashboard')->with('success', 'Successfully delete task !');
+    }
 }

@@ -43,10 +43,24 @@
                                     <input type="hidden" value="{{ $task->id }}" name="task_id">
                                     <button type="submit" class="cursor-default bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Complete</button>
                                 </form>
-                                <a href="{{ route('edit_task', $task->id) }}"  class="cursor-default bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">edit</a>
+                                <a href="{{ route('edit_task', $task->id) }}" class="cursor-default bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">edit</a>
+                                <form action="{{ route('delete_task') }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" value="{{ $task->id }}" name="task_id">
+                                    <button type="submit" class="cursor-default bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">Delete</button>
+                                </form>
                             </td>
                             @elseif ($task->is_completed == 1)
-                            <td></td>
+                            <td>
+                                <a href="{{ route('edit_task', $task->id) }}" class="cursor-default bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">edit</a>
+                                <form action="{{ route('delete_task') }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" value="{{ $task->id }}" name="task_id">
+                                    <button type="submit" class="cursor-default bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">Delete</button>
+                                </form>
+                            </td>
                             @endif
                         </tr>
                         @endforeach
