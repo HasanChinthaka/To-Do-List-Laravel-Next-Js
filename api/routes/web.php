@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/task-list',[TaskController::class, 'index'])->name('add_task');
 Route::get('/add-new-task',[TaskController::class, 'add_task'])->name('add_task');
 
 Route::post('/add-new-task', [TaskController::class, 'store'])->name('save_task');
