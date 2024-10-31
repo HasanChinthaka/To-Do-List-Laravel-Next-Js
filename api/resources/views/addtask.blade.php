@@ -10,7 +10,7 @@
             <form class="max-w-7xl mx-auto sm:px-6 lg:px-8" action="{{ route('save_task') }}" method="POST">
                 @csrf
                 <div class="mt-4 flex flex-col bg-gray-100 rounded-lg p-4 shadow-sm">
-                    <h2 class="text-black font-bold text-lg">Shipping Label Address Form</h2>
+                    <h2 class="text-black font-bold text-lg">Add New Task</h2>
 
                     <div class="mt-4">
                         <label class="text-black" for="task_title">Task Title</label>

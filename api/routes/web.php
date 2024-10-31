@@ -26,4 +26,8 @@ Route::get('/add-new-task',[TaskController::class, 'add_task'])->name('add_task'
 Route::post('/add-new-task', [TaskController::class, 'store'])->name('save_task');
 Route::put('/task-complete', [TaskController::class, 'update_status'])->name('update_task_status');
 
+Route::get('/edit-task/{id}',  [TaskController::class, 'edit_task'])->name('edit_task');
+Route::put('/edit-task/{id}', [TaskController::class, 'update_task'])->name('update_task');
+Route::delete('/task-delete', [TaskController::class, 'destroy'])->name('delete_task');
+
 require __DIR__.'/auth.php';
