@@ -7,12 +7,21 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <!-- <a href="#" class="cursor-default"> -->
+            
             <a href="{{ route('add_task') }}"
                 class="cursor-default bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                 Add Task
             </a>
-            <!-- </a> -->
+            <a href="{{ route('admin_msg') }}"
+                class="cursor-default bg-transparent mx-4 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Send Message for Users
+            </a>
+
+            <a href="{{ route('show_msgs') }}"
+                class="cursor-default bg-transparent mx-4 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Admin Messages <span class="bg-red-400 text-white px-2 py-1 rounded">{{ $message_count }}</span>
+            </a>
+            
             <div class="my-5 dark:bg-gray-800 text-white overflow-hidden shadow-sm sm:rounded-lg">
                 <table class="table-auto flex-1 justify-between">
                     <thead>
